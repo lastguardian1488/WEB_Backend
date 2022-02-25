@@ -4,14 +4,18 @@
 body{
     background-color:blanchedalmond;
 }
-header h1{
-    text-align: center;
-}
 .sreenshot-block{
-    padding:10px;
+    overflow: hidden;
 }
-.step p{
+.slick-slide p{
     border:2px solid rosybrown;
     border-radius: 10px;
     padding:7px;
+    margin-top: 10px;
+}
+.slick-prev:before, .slick-next:before{
+    color: black;
+}
+.split-line{
+    border: 1px solid black;
 }
