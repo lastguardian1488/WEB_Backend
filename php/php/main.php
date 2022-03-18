@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,10 +15,10 @@
         <div class="task_1">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <h1 class="text-center my-5">Задание 1</h1>
                     </div>
-                    <div class="col">
+                    <div class="col-12">
                         <div class="slider-task-1">
                             <div class="slick-slide">
                                 <div class="sreenshot-block">
@@ -65,10 +65,10 @@
         <div class="task_2">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <h1 class="text-center my-5">Задание 2</h1>
                     </div>
-                    <div class="col">
+                    <div class="col-12">
                         <div class="slider-task-2">
                             <div class="slick-slide">
                                 <div class="sreenshot-block">
@@ -139,6 +139,57 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="split-line">
+        <div class="task_3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-center my-5">Задание 3</h1>
+                    </div>
+                    <div class="col-12">
+                        <form action="" method="POST">
+                            <label> Ваше имя:<br /><input name="field-name" value=""/></label><br />
+                            <label> Ваш email:<br/><input name="field-email" value="" type="email"/></label><br/>
+                            <label> 
+                                Год Рождения:<br />
+                                <select name="field-date-birth">
+                                    <option value="default" hidden>Выберите год рождения</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                </select>
+                            </label><br />
+                            <span>Ваш пол:<br /></span> 
+                            <label><input type="radio" name="sex" value="1"/>Мужской</label>
+                            <label><input type="radio" name="sex" value="2"/>Женский</label><br /> 
+                            <span>Количество конечностей:<br /></span>
+                            <label><input type="radio" name="NumberOfLimbs" value="4" />4</label>
+                            <label><input type="radio" name="NumberOfLimbs" value="6" />6</label>
+                            <label><input type="radio" name="NumberOfLimbs" value="15"/>15</label><br />
+                            <label>
+                                Ваши суперспособности:<br />
+                                <select name="SuperAbilities" multiple="multiple">
+                                    <option value="X-RAY видение">X-RAY видение</option>
+                                    <option value="Вставать по будильнику">Вставать по будильнику</option>
+                                    <option value="Полёт">Полёт</option>
+                                    <option value="Бессмертие">Бессмертие</option>
+                                </select>
+                            </label><br />
+                            <label> Биография:<br /><textarea name="field-biography" placeholder="С чего начнёте?"></textarea></label><br />
+                            <label><br /><input type="checkbox" name="checkbox" />С контрактом ознакомлен(а)</label><br />
+                            <label>Отправить форму:<input type="submit" value="Отправить" /></label>
+                        </form>
                     </div>
                 </div>
             </div>
