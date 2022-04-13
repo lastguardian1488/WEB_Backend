@@ -26,4 +26,4 @@ INNER JOIN person_form_superabillities ps
 ON ps.person_id = p.id
 INNER JOIN superabillities s
 ON s.superabillity_name = ps.superabillity_name
-ORDER BY p.id 
+ORDER BY p.id;
