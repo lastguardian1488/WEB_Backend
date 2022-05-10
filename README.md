@@ -8,3 +8,4 @@
  
  Начиная с версии 1.5. схема БД выглядит следующим образом:
 ![ER drawio](https://user-images.githubusercontent.com/72927875/167586870-18480932-5b4a-45c0-9b14-fb15eca4a06e.png)
+![BD](https://user-images.githubusercontent.com/72927875/167587511-d0481cd5-d569-4f18-b7f3-9e2754de4c4b.svg)
