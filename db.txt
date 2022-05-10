@@ -1,29 +1,32 @@
-CREATE TABLE person_form(
-id int(10) unsigned NOT NULL AUTO_INCREMENT,
-name varchar(255) NOT NULL DEFAULT '',
-email varchar(255) NOT NULL DEFAULT '',
-birth_year year(4) NOT NULL,
-sex tinytext NOT NULL,
-number_of_limbs tinyint(1) unsigned NOT NULL,
-biography text NOT NULL DEFAULT '',
-PRIMARY KEY(id)
+CREATE TABLE user_form(
+	name varchar(255) NOT NULL DEFAULT '',
+	email varchar(255) NOT NULL DEFAULT '',
+	birth_year year(4) NOT NULL,
+	sex tinytext NOT NULL,
+	number_of_limbs tinyint(1) unsigned NOT NULL,
+	biography text NOT NULL DEFAULT '',
+	checkbox_date varchar(50) NOT NULL,
+	user_login varchar(255) NOT NULL PRIMARY KEY,
+	foreign key(user_login) references users(user_login)
 );
 
 CREATE TABLE superabillities(
-superabillity_name varchar(255) NOT NULL PRIMARY KEY
+	id int(10) NOT NULL PRIMARY KEY,
+	superabillity_name varchar(255) NOT NULL
 );
 
-CREATE TABLE person_form_superabillities(
-	person_id int(10) unsigned NOT NULL,
-	superabillity_name varchar(255) NOT NULL,
-	PRIMARY KEY(person_id,superabillity_name)
+CREATE TABLE user_superabillities(
+	superabillity_id int(10) NOT NULL,
+	user_login varchar(255) NOT NULL,
+	PRIMARY KEY(superabillity_id,user_login),
+	foreign key(user_login) references users(user_login),
+	foreign key(superabillity_id) references superabillities(id)
 );
 
-//пример запроса для получения всей информации о записи(включая данные из первой таблицы и таблицы person_form_superabillities)
-SELECT p.*, s.*
-FROM person_form p
-INNER JOIN person_form_superabillities ps
-ON ps.person_id = p.id
-INNER JOIN superabillities s
-ON s.superabillity_name = ps.superabillity_name
-ORDER BY p.id;
+CREATE TABLE users(
+	user_login varchar(255) PRIMARY KEY NOT NULL,
+	user_password varchar(255) NOT NULL
+);
+
+
+Diagram - draw.io

@@ -2,9 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center my-5">Задание 3</h1>
+                <h1 class="text-center my-5">Форма</h1>
             </div>
-            <!-- TODO: адекватно настроить стили формы и отображения ошибок -->
+            <div class="auth">
+                <?php if (!empty($_COOKIE['pass'])) { print $messages['authorize']; }?>
+            </div>
             <div class="col-12">
                 <div class="form-wrapper">
                     <form class="form align-center" action="" method="POST">
@@ -39,14 +41,14 @@
                             <select name="super-abillities[]" multiple="multiple" >
                                 <?php 
                                 // запрос в базу данных для выгрузки суперспособностей из таблицы superabillities
-                                $user = 'u47500';
-                                $pass = '7787869';
-                                $db = new PDO('mysql:host=localhost;dbname=u47500', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+                                $user_db = 'u47500';
+                                $pass_db = '7787869';
+                                $db = new PDO('mysql:host=localhost;dbname=u47500', $user_db, $pass_db, array(PDO::ATTR_PERSISTENT => true));
                                 $results = $db->query("SELECT * FROM superabillities");
                                 $superabillities = explode(",",$values['super-abillities']);  //массив для заполнения значений тега select через cockies(selected выставляется на выбранные)
                                 while($row = $results->fetch()) {
-                                    $super_name = $row[0];
-                                    $super_id = $row[1];
+                                    $super_id = $row[0];
+                                    $super_name = $row[1];
                                     ?>
                                 <option value="<?=$super_id?>" <?php foreach($superabillities as $superabillity) if($superabillity == $super_id) print 'selected'?> ><?=$super_name?></option>
                                 <?php } ?>
