@@ -7,5 +7,4 @@
   - Валидация с помощью cookies не изменилась, работает как при первоначальной отправке данных, так и при изменении под авторизированным пользователем 
  
  Начиная с версии 1.5. схема БД выглядит следующим образом:
-![ER drawio](https://user-images.githubusercontent.com/72927875/167586870-18480932-5b4a-45c0-9b14-fb15eca4a06e.png)
-![BD](https://user-images.githubusercontent.com/72927875/167587511-d0481cd5-d569-4f18-b7f3-9e2754de4c4b.svg)
+![BD](https://user-images.githubusercontent.com/72927875/167587934-9159a4f8-d1a1-43c3-ac86-332ac33d8106.png)
