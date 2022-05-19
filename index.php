@@ -2,8 +2,13 @@
 header('Content-Type: text/html; charset=UTF-8');
 // В суперглобальном массиве $_SERVER PHP сохраняет некторые заголовки запроса HTTP
 // и другие сведения о клиненте и сервере, например метод текущего запроса $_SERVER['REQUEST_METHOD'].
+
+// включаем содержимое файла db.php
+include("php/db.php");
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  
+  // TODO: для нового пользователя работать через values-cookie, а для авторизированного запоминать данные на сессию
+  // TODO: исправить ошибку: при окончании сессии по выходу из браузера кнопка входа выглядит как для выхода, а работает как для входа
   $messages = array();  
 
   if (!empty($_COOKIE['save'])) {
@@ -80,10 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   // ранее в сессию записан факт успешного логина.
   // загружаем из бд данные в $values, предварительно санитизируем
   if (!$error_flag && !empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
-    $user_db = 'u47500';
-    $pass_db = '7787869';
-    $db = new PDO('mysql:host=localhost;dbname=u47500', $user_db, $pass_db, array(PDO::ATTR_PERSISTENT => true));
-
     $stmt1 = $db->prepare("SELECT name,email,birth_year,sex,number_of_limbs,biography FROM user_form WHERE user_login=:user_login");
     $stmt1->bindParam(':user_login', $_SESSION['login']);
     $stmt1->execute();
@@ -203,10 +204,6 @@ else {
   // Проверяем меняются ли ранее сохраненные данные или отправляются новые.
   if (!empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
     // для user_form делаем update всего, кроме даты чекбокса(остается такой же как при регистрации) и логина
-    $user_db = 'u47500';
-    $pass_db = '7787869';
-    $db = new PDO('mysql:host=localhost;dbname=u47500', $user_db, $pass_db, array(PDO::ATTR_PERSISTENT => true));
-
     // update данных в таблице user_form, логин берем из $_SESSION
     $stmt1 = $db->prepare("UPDATE user_form SET name=:namefield, email=:email, birth_year=:birth_year, sex=:sex, number_of_limbs=:num_of_limbs, biography=:biography WHERE user_login=:login;");
     $stmt1->bindParam(':namefield', $namefield);
@@ -274,10 +271,6 @@ else {
   }
   // работа с новым пользователем
   else {
-    $user_db = 'u47500';
-    $pass_db = '7787869';
-    $db = new PDO('mysql:host=localhost;dbname=u47500', $user_db, $pass_db, array(PDO::ATTR_PERSISTENT => true));
-
     // Функция генерации паролей
     // TODO: можно исправить последний str_shuffle
     function generatePassword($numAlpha = 4, $numDigit = 3, $numNonAlpha = 2): string

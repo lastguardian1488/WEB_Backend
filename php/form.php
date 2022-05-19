@@ -41,9 +41,6 @@
                             <select name="super-abillities[]" multiple="multiple" >
                                 <?php 
                                 // запрос в базу данных для выгрузки суперспособностей из таблицы superabillities
-                                $user_db = 'u47500';
-                                $pass_db = '7787869';
-                                $db = new PDO('mysql:host=localhost;dbname=u47500', $user_db, $pass_db, array(PDO::ATTR_PERSISTENT => true));
                                 $results = $db->query("SELECT * FROM superabillities");
                                 $superabillities = explode(",",$values['super-abillities']);  //массив для заполнения значений тега select через cockies(selected выставляется на выбранные)
                                 while($row = $results->fetch()) {

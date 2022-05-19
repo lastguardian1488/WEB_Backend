@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:blanchedalmond;
+}
+
+/* слайдеры */
+.sreenshot-block{
+    overflow: hidden;
+}
+.slick-slide p{
+    border:2px solid rosybrown;
+    border-radius: 10px;
+    padding:7px;
+    margin-top: 10px;
+}
+.slick-prev:before, .slick-next:before{
+    color: black;
+}
+.split-line{
+    border: 1px solid black;
+}
+/* статистика */
+.statistics table{
+    border:1px solid black;
+}
+.statistics th{
+    border:1px solid black;
+    padding: 3px;
+}
+.statistics tr:nth-child(even){
+    background: gainsboro;
+}
+.statistics tr:nth-child(odd){
+    background: white;
+}
+.statistics td{
+    border:1px solid black;
+    padding: 4px;
+}
+
+
+
+
+
+/* форма */
+.form-wrapper{
+    border: 2px solid rosybrown;
+    border-radius: 5px;
+    padding: 10px;
+}
+.form{
+    position: relative;
+}
+.form input[type="text"], input[type="email"]{
+    outline: none;
+    width: 200px;
+    border: 1px solid rgba(29, 24, 23, 0.897);
+    border-radius: 5px;
+
+    padding: 10px;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+}
+.form select{
+    outline: none;
+    width: 200px;
+    border: 1px solid rgba(29, 24, 23, 0.897);
+    border-radius: 5px;
+
+    padding: 10px;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+}
+.form select:focus-visible{
+    border-color: rgba(29, 24, 23, 0.897);
+    box-shadow: 0 0 10px rgb(29, 24, 23);
+}
+.custom-radio>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+  
+/* для элемента label связанного с .custom-radio */
+.custom-radio>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+  
+  /* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio>span::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+  
+  /* стили при наведении курсора на радио */
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: #b3d7ff;
+}
+  
+  /* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio>input:not(:disabled):active+span::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+  
+  /* стили для радиокнопки, находящейся в фокусе */
+.custom-radio>input:focus+span::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+  
+  /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio>input:focus:not(:checked)+span::before {
+    border-color: #80bdff;
+}
+  
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio>input:checked+span::before {
+    border-color: rosybrown;
+    background-color: rosybrown;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+  
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio>input:disabled+span::before {
+    background-color: #e9ecef;
+}
+.form textarea{
+    font-size: 12px;
+    width: 200px;
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid rgba(29, 24, 23, 0.897);
+    outline: none;
+}
+.form input[type="submit"]{
+    font-size: 12px;
+    width: 200px;
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid rgba(29, 24, 23, 0.897);
+    background-color: white;
+    outline: none;
+    font-weight: 500;
+
+    margin-top: 2px;
+
+    transition: all 0.3s ease;
+}
+.form input:focus-visible{
+    border-color: rgba(29, 24, 23, 0.897);
+    box-shadow: 0 0 10px rgb(29, 24, 23);
+}
+
+
+/* для отображения ошибок в форме */
+.form .error {
+    border: 2px solid red !important;
+    box-shadow: 0 0 5px rgb(153, 32, 7);
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 10;
+    color: black;
+    background-color: white;
+}
+.form .name-error{
+    top: 155px;
+    left: 220px;
+}
+.form .email-error{
+    top: 230px;
+    left: 220px;
+}
+.form .date-birth-error{
+    top: 305px;
+    left: 220px;
+}
+.form .sex-error{
+    top: 365px;
+    left: 220px;
+}
+.form .num-of-limbs-error{
+    top: 425px;
+    left: 220px;
+}
+.form .super-abillities-error{
+    top: 485px;
+    left: 220px;
+}
+
+
+/* для отображения окна с подтверждением отправки */
+.save {
+    border: 1px solid rosybrown;
+    border-radius: 5px;
+    padding: 10px;
+}
